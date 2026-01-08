@@ -1,64 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('multiStepForm');
-    const steps = Array.from(document.querySelectorAll('.step'));
-    const progress = document.getElementById('progress');
-    const submitBtn = document.getElementById('submitBtn');
-    let currentStep = 1;
+    let current = 0;
+    const steps = document.querySelectorAll('.step');
+    const dots = document.querySelectorAll('.step-dots .dot');
 
-    // Navegação Próximo
-    document.querySelectorAll('.btn-next').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const input = steps[currentStep-1].querySelector('input, select');
-            if(input.checkValidity()) {
-                steps[currentStep-1].classList.remove('active');
-                currentStep++;
-                steps[currentStep-1].classList.add('active');
-                updateUI();
-            } else {
-                input.reportValidity();
-            }
-        });
-    });
+    const move = (dir) => {
+        const inputs = steps[current].querySelectorAll('input, textarea');
+        if (dir === 1 && !Array.from(inputs).every(i => i.checkValidity())) {
+            return inputs[0].reportValidity();
+        }
+        steps[current].classList.remove('active');
+        current += dir;
+        steps[current].classList.add('active');
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    };
 
-    // Navegação Voltar
-    document.querySelectorAll('.btn-prev').forEach(btn => {
-        btn.addEventListener('click', () => {
-            steps[currentStep-1].classList.remove('active');
-            currentStep--;
-            steps[currentStep-1].classList.add('active');
-            updateUI();
-        });
-    });
+    document.querySelectorAll('.btn-next').forEach(b => b.onclick = () => move(1));
+    document.querySelectorAll('.btn-prev').forEach(b => b.onclick = () => move(-1));
 
-    function updateUI() {
-        progress.style.width = (currentStep / steps.length) * 100 + '%';
-        window.scrollTo({ top: document.getElementById('orcamento').offsetTop - 100, behavior: 'smooth' });
-    }
-
-    // Envio Final
-    form.addEventListener('submit', function(e) {
+    document.getElementById('multiStepForm').onsubmit = function(e) {
         e.preventDefault();
-        submitBtn.disabled = true;
-        submitBtn.innerText = "Enviando Pedido...";
-
-        const formData = new FormData(form);
-        const zapLink = "https://wa.me/5521995901577?text=";
-        const msg = encodeURIComponent(`Olá! Me chamo ${form.name.value}. Enviei as fotos no site para o serviço de ${form.servico.value}. Pode me passar o orçamento?`);
-
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        }).then(res => {
-            if(res.ok) {
-                window.location.href = zapLink + msg;
-            } else {
-                alert("Erro ao enviar. Tente novamente.");
-                submitBtn.disabled = false;
-            }
-        }).catch(() => {
-            alert("Erro de conexão.");
-            submitBtn.disabled = false;
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true; btn.innerText = "Enviando...";
+        
+        fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' }})
+        .then(() => {
+            const nome = this.name.value;
+            const bairro = this.bairro.value;
+            const link = `https://wa.me/5521995901577?text=Olá Info House! Sou ${nome} do bairro/condomínio ${bairro}. Acabei de enviar as fotos do reparo pelo app.`;
+            window.location.href = link;
         });
-    });
+    };
 });
