@@ -37,3 +37,80 @@ input, textarea { width: 100%; padding: 15px; border-radius: 12px; border: 1px s
 #submitBtn { background: var(--success); }
 .btn-row { display: flex; gap: 10px; }
 .btn-prev { background: #eee; border: none; padding: 18px; border-radius: 14px; font-weight: 700; flex: 1; cursor: pointer; }
+
+
+/* Prova Social Estilo App */
+.social-proof {
+    margin-top: 40px;
+    padding-bottom: 30px;
+}
+
+.proof-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.proof-header h3 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.proof-header p {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.testimonials-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 0;
+    scrollbar-width: none; /* Esconde scroll no Firefox */
+}
+
+.testimonials-scroll::-webkit-scrollbar {
+    display: none; /* Esconde scroll no Chrome/Safari */
+}
+
+.testimonial-card {
+    min-width: 280px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.testimonial-card p {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #334155;
+    margin-bottom: 15px;
+}
+
+.client-meta strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--primary);
+}
+
+.client-meta span {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.badge-item {
+    background: #f1f5f9;
+    padding: 8px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #475569;
+}
