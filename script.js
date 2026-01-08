@@ -1,51 +1,118 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('multiStepForm');
-    const steps = document.querySelectorAll('.step');
-    const nextButtons = document.querySelectorAll('.btn-next');
-    const prevButtons = document.querySelectorAll('.btn-prev');
-    const submitBtn = document.getElementById('submitBtn');
+    const steps = Array.from(document.querySelectorAll('.step'));
+    const progressBar = document.getElementById('progressBar');
+    let currentStepIndex = 0;
 
-    // Função para mudar de passo corrigida
-    function goToStep(stepNumber) {
-        steps.forEach(s => s.classList.remove('active'));
-        document.getElementById(`step${stepNumber}`).classList.add('active');
-        window.scrollTo(0, document.getElementById('solicitar').offsetTop - 100);
+    const SEU_ZAP = "5521995901577"; // Seu número de WhatsApp
+
+    // Função para atualizar a barra de progresso
+    function updateProgressBar() {
+        const progress = ((currentStepIndex + 1) / steps.length) * 100;
+        progressBar.style.width = `${progress}%`;
     }
 
-    // Botões Próximo
-    nextButtons.forEach(button => {
+    // Função para exibir o passo atual
+    function showStep(index) {
+        steps.forEach((step, i) => {
+            step.classList.toggle('active', i === index);
+        });
+        currentStepIndex = index;
+        updateProgressBar();
+        // Rola a página para o topo do formulário
+        document.getElementById('solicitar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Navegação para o próximo passo
+    document.querySelectorAll('.btn-next').forEach(button => {
         button.addEventListener('click', () => {
-            const currentStep = button.closest('.step');
-            const input = currentStep.querySelector('input, select, textarea');
-            
-            if (input.checkValidity()) {
-                const nextStepNum = parseInt(currentStep.id.replace('step', '')) + 1;
-                goToStep(nextStepNum);
-            } else {
-                input.reportValidity();
+            const currentStepElement = steps[currentStepIndex];
+            const inputs = currentStepElement.querySelectorAll('input[required], select[required], textarea[required]');
+            let allInputsValid = true;
+
+            // Valida apenas os inputs do passo atual
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    input.reportValidity();
+                    allInputsValid = false;
+                }
+            });
+
+            if (allInputsValid) {
+                if (currentStepIndex < steps.length - 1) {
+                    showStep(currentStepIndex + 1);
+                }
             }
         });
     });
 
-    // Botões Voltar
-    prevButtons.forEach(button => {
+    // Navegação para o passo anterior
+    document.querySelectorAll('.btn-prev').forEach(button => {
         button.addEventListener('click', () => {
-            const currentStep = button.closest('.step');
-            const prevStepNum = parseInt(currentStep.id.replace('step', '')) - 1;
-            goToStep(prevStepNum);
+            if (currentStepIndex > 0) {
+                showStep(currentStepIndex - 1);
+            }
         });
     });
 
-    // Envio Final
-    form.addEventListener('submit', (e) => {
+    // Inicializa o formulário no primeiro passo
+    showStep(0);
+
+    // Lógica para o slider Antes/Depois
+    document.querySelectorAll('.before-after-card').forEach(card => {
+        const imageWrapper = card.querySelector('.image-wrapper');
+        const afterImg = card.querySelector('.after-img');
+        const sliderControl = card.querySelector('.slider-control');
+        let isDragging = false;
+
+        const startDragging = (e) => {
+            e.preventDefault();
+            isDragging = true;
+            imageWrapper.classList.add('sliding'); // Adiciona classe para desativar transição CSS
+        };
+
+        const stopDragging = () => {
+            isDragging = false;
+            imageWrapper.classList.remove('sliding'); // Remove classe
+        };
+
+        const onDrag = (e) => {
+            if (!isDragging) return;
+
+            const rect = imageWrapper.getBoundingClientRect();
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX); // Suporte a touch
+            let x = clientX - rect.left;
+
+            // Limitar o slider dentro da imagem
+            if (x < 0) x = 0;
+            if (x > rect.width) x = rect.width;
+
+            afterImg.style.width = `${x}px`;
+            sliderControl.style.left = `${x}px`;
+        };
+
+        sliderControl.addEventListener('mousedown', startDragging);
+        imageWrapper.addEventListener('mousemove', onDrag);
+        imageWrapper.addEventListener('mouseup', stopDragging);
+        imageWrapper.addEventListener('mouseleave', stopDragging);
+
+        // Suporte a eventos de toque para mobile
+        sliderControl.addEventListener('touchstart', startDragging);
+        imageWrapper.addEventListener('touchmove', onDrag);
+        imageWrapper.addEventListener('touchend', stopDragging);
+        imageWrapper.addEventListener('touchcancel', stopDragging);
+    });
+
+    // Envio Final do Formulário
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const SEU_ZAP = "5521995901577";
-        const nome = document.getElementById('input_name').value;
-        const servico = document.getElementById('input_servico').value;
+        const nome = form.querySelector('input[name="name"]').value;
+        const servico = form.querySelector('select[name="servico"]').value;
+        const descricao = form.querySelector('textarea[name="message"]').value;
 
         submitBtn.disabled = true;
-        submitBtn.innerText = "Enviando fotos...";
+        submitBtn.innerText = "Enviando pedido...";
 
         const formData = new FormData(form);
 
@@ -56,16 +123,20 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(res => {
             if (res.ok) {
-                const msg = `Olá! Sou ${nome}. Acabei de enviar fotos no site para o serviço de ${servico}. Pode me passar o orçamento?`;
-                window.location.href = `https://wa.me/${SEU_ZAP}?text=${encodeURIComponent(msg)}`;
+                // Mensagem personalizada para o WhatsApp
+                const whatsappMessage = `Olá! Sou ${nome}. Acabei de enviar um pedido de orçamento pelo site para ${servico.toUpperCase()}.\n\nDescrição do problema: ${descricao}\n\nJá anexei as fotos/vídeos. Poderiam verificar?`;
+                window.location.href = `https://wa.me/${SEU_ZAP}?text=${encodeURIComponent(whatsappMessage)}`;
             } else {
-                alert("Erro ao enviar. Tente novamente.");
+                alert("Erro ao enviar o formulário. Por favor, tente novamente.");
                 submitBtn.disabled = false;
+                submitBtn.innerText = "Tentar Novamente";
             }
         })
-        .catch(() => {
-            alert("Erro de conexão.");
+        .catch(error => {
+            console.error('Erro na requisição:', error);
+            alert("Erro de conexão. Verifique sua internet e tente novamente.");
             submitBtn.disabled = false;
+            submitBtn.innerText = "Finalizar e Chamar no WhatsApp";
         });
     });
 });
