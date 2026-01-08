@@ -1,29 +1,39 @@
-/* Estilo Adicional ao anterior */
-.condominios {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
-}
+:root { --primary: #007AFF; --dark: #1C1C1E; --bg: #F2F2F7; --success: #34C759; }
 
-.trust-pill {
-    background: #fbbf24;
-    color: #000;
-    padding: 4px 10px;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    display: inline-block;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
 
-.benefits { margin-top: 20px; }
-.benefit-row { background: white; padding: 15px; border-radius: 15px; border: 1px solid #eee; }
-.benefit-item { font-size: 0.85rem; margin-bottom: 8px; color: #475569; }
-.benefit-item:last-child { margin-bottom: 0; }
+body { background: var(--bg); color: var(--dark); padding-bottom: 50px; }
 
-.faq { margin-top: 40px; }
-.faq h3 { margin-bottom: 15px; font-size: 1.1rem; }
-details { background: white; padding: 15px; border-radius: 12px; margin-bottom: 10px; border: 1px solid #eee; }
-summary { font-weight: 700; font-size: 0.9rem; cursor: pointer; list-style: none; }
-details p { margin-top: 10px; font-size: 0.85rem; color: #64748b; }
+.container { max-width: 500px; margin: 0 auto; padding: 0 20px; }
 
-/* O resto do CSS anterior permanece igual para manter a consistência do App */
+/* Header */
+.app-header { background: #fff; padding: 15px 0; border-bottom: 1px solid #ddd; text-align: center; }
+.location-tag { font-size: 0.7rem; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
+.dot { width: 8px; height: 8px; background: var(--success); border-radius: 50%; display: inline-block; }
+.logo { font-size: 1.4rem; font-weight: 800; }
+.logo span { color: var(--primary); }
+
+/* Hero */
+.hero-card { margin-top: 20px; }
+.content.condominios { background: #1c1c1e; color: white; padding: 30px; border-radius: 24px; text-align: center; }
+.trust-pill { background: #FFD60A; color: #000; padding: 5px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; margin-bottom: 15px; display: inline-block; }
+.hero-card h1 { font-size: 1.8rem; line-height: 1.2; margin-bottom: 10px; }
+.hero-card h1 span { color: var(--primary); }
+.btn-main-app { background: var(--primary); color: white; padding: 15px; border-radius: 14px; display: block; text-decoration: none; font-weight: 700; margin-top: 20px; }
+
+/* Benefits */
+.benefits-row { display: flex; justify-content: space-between; margin-top: 20px; }
+.benefit { font-size: 0.8rem; font-weight: 700; color: #666; }
+
+/* Form */
+.app-form-card { background: white; border-radius: 24px; padding: 30px; margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.step { display: none; }
+.step.active { display: block; }
+
+label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.9rem; }
+input, textarea { width: 100%; padding: 15px; border-radius: 12px; border: 1px solid #ddd; background: #f9f9f9; margin-bottom: 20px; font-size: 1rem; }
+
+.btn-next, #submitBtn { width: 100%; background: var(--primary); color: white; border: none; padding: 18px; border-radius: 14px; font-weight: 700; font-size: 1rem; cursor: pointer; }
+#submitBtn { background: var(--success); }
+.btn-row { display: flex; gap: 10px; }
+.btn-prev { background: #eee; border: none; padding: 18px; border-radius: 14px; font-weight: 700; flex: 1; cursor: pointer; }
