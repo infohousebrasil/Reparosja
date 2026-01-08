@@ -3,107 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reparos Pro | Soluções Residenciais Rápidas</title>
+    <title>InfoHouse | Reparos Residenciais Profissionais</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <nav class="container">
-            <div class="logo">REPAROS<span>PRO</span></div>
-            <a href="#orcamento" class="btn-nav">Solicitar Agora</a>
+            <div class="logo">INFO<span>HOUSE</span></div>
+            <a href="#solicitar" class="btn-sm">Falar com Atendente</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>Sua casa nova, sem dor de cabeça.</h1>
-            <p>Pequenos reparos, pintura e manutenção com profissionais verificados e orçamento rápido.</p>
-            <a href="#orcamento" class="btn-main">Quero um orçamento gratuito</a>
-        </div>
-    </section>
-
-    <section class="antes-depois container">
-        <h2>Resultados Reais</h2>
-        <div class="grid-comparativo">
-            <div class="card-job">
-                <div class="fotos">
-                    <div class="tag antes">Antes</div>
-                    <img src="https://via.placeholder.com/300x200/ddd/555?text=Parede+com+Infiltração" alt="Antes">
-                    <div class="tag depois">Depois</div>
-                    <img src="https://via.placeholder.com/300x200/25d366/fff?text=Pintura+Finalizada" alt="Depois">
-                </div>
-                <p>Recuperação de parede e pintura interna</p>
-            </div>
-            <div class="card-job">
-                <div class="fotos">
-                    <div class="tag antes">Antes</div>
-                    <img src="https://via.placeholder.com/300x200/ddd/555?text=Telhado+Quebrado" alt="Antes">
-                    <div class="tag depois">Depois</div>
-                    <img src="https://via.placeholder.com/300x200/25d366/fff?text=Telhas+Novas" alt="Depois">
-                </div>
-                <p>Troca de telhas e limpeza de calhas</p>
+            <span class="badge">Disponível agora em sua região</span>
+            <h1>Manutenção residencial sem complicações.</h1>
+            <p>Conectamos você aos melhores profissionais para pequenos reparos, elétrica, hidráulica e pintura.</p>
+            <div class="stats">
+                <div><strong>+500</strong> Reparos feitos</div>
+                <div><strong>4.9/5</strong> Avaliação média</div>
             </div>
         </div>
     </section>
 
-    <section id="orcamento" class="form-section">
+    <section class="steps-info container">
+        <div class="step-card">
+            <span>01</span>
+            <h3>Peça o orçamento</h3>
+            <p>Descreva o problema e envie fotos pelo nosso formulário inteligente.</p>
+        </div>
+        <div class="step-card">
+            <span>02</span>
+            <h3>Receba a proposta</h3>
+            <p>Analisamos as fotos e enviamos o valor via WhatsApp em minutos.</p>
+        </div>
+        <div class="step-card">
+            <span>03</span>
+            <h3>Serviço feito</h3>
+            <p>Profissional vai até sua casa e resolve o problema com garantia.</p>
+        </div>
+    </section>
+
+    <section id="solicitar" class="typeform-section">
         <div class="container">
-            <div class="form-container">
-                <h2>Peça seu Reparo</h2>
-                <p>Conte o problema, envie fotos e receba o orçamento no seu WhatsApp.</p>
-                
-                <form id="repairForm">
-                    <input type="hidden" name="access_key" value="16828e56-ee6a-466e-a259-291b1fc00f5a">
-                    <input type="hidden" name="subject" value="Novo Lead de Reparo">
-
-                    <div class="input-group">
-                        <input type="text" name="name" placeholder="Seu Nome" required>
-                        <input type="tel" name="whatsapp" id="whatsapp" placeholder="WhatsApp com DDD" required>
+            <div class="typeform-box">
+                <form id="multiStepForm" action="https://formspree.io/f/e8ad8916abe54539b9107d13b3958a55" method="POST" enctype="multipart/form-data">
+                    
+                    <div class="step active" data-step="1">
+                        <span class="step-number">1 de 4</span>
+                        <h2>Olá! Qual é o seu nome?</h2>
+                        <input type="text" name="name" placeholder="Digite seu nome completo" required>
+                        <button type="button" class="next-btn">Próximo</button>
                     </div>
 
-                    <select name="servico" required>
-                        <option value="">O que precisa ser feito?</option>
-                        <option value="Pintura">Pintura e Massa</option>
-                        <option value="Hidraulica">Hidráulica (Vazamentos/Pias)</option>
-                        <option value="Eletrica">Elétrica (Chuveiro/Tomadas)</option>
-                        <option value="Telhado">Telhado e Calhas</option>
-                        <option value="Outros">Outros pequenos reparos</option>
-                    </select>
+                    <div class="step" data-step="2">
+                        <span class="step-number">2 de 4</span>
+                        <h2>Como falamos com você e o que precisa?</h2>
+                        <input type="tel" name="whatsapp" id="whatsapp" placeholder="Seu WhatsApp com DDD" required>
+                        <select name="servico" required>
+                            <option value="">Selecione o tipo de reparo...</option>
+                            <option value="Eletrica">Elétrica</option>
+                            <option value="Hidraulica">Hidráulica</option>
+                            <option value="Pintura">Pintura/Massa</option>
+                            <option value="Outros">Outros Reparos</option>
+                        </select>
+                        <div class="nav-btns">
+                            <button type="button" class="prev-btn">Voltar</button>
+                            <button type="button" class="next-btn">Próximo</button>
+                        </div>
+                    </div>
 
-                    <textarea name="descricao" placeholder="Descreva o problema detalhadamente..." required></textarea>
+                    <div class="step" data-step="3">
+                        <span class="step-number">3 de 4</span>
+                        <h2>Descreva brevemente o problema</h2>
+                        <textarea name="message" placeholder="Ex: Minha torneira está pingando muito..." required></textarea>
+                        <div class="nav-btns">
+                            <button type="button" class="prev-btn">Voltar</button>
+                            <button type="button" class="next-btn">Próximo</button>
+                        </div>
+                    </div>
 
-                    <div class="file-input">
-                        <label for="attachment">Anexe fotos do local (Obrigatório)</label>
+                    <div class="step" data-step="4">
+                        <span class="step-number">4 de 4</span>
+                        <h2>Para finalizar, envie fotos do local</h2>
+                        <p class="hint">Isso ajuda muito na precisão do orçamento.</p>
                         <input type="file" name="attachment" accept="image/*" multiple required>
+                        <div class="nav-btns">
+                            <button type="button" class="prev-btn">Voltar</button>
+                            <button type="submit" id="submitBtn">Finalizar e abrir WhatsApp</button>
+                        </div>
                     </div>
 
-                    <button type="submit" id="submitBtn">Enviar e Abrir WhatsApp</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <section class="depoimentos container">
-        <h2>O que dizem nossos clientes</h2>
-        <div class="grid-depoimentos">
-            <div class="depoimento">
-                <p>"Trocaram minha fechadura e pintaram a porta em uma tarde. Muito limpos e educados!"</p>
-                <span>- Maria Souza, Bairro Centro</span>
-            </div>
-            <div class="depoimento">
-                <p>"O melhor preço que achei para limpar as calhas antes da chuva. Recomendo."</p>
-                <span>- Carlos Lima, Bairro Jardim</span>
-            </div>
-        </div>
-    </section>
-
     <footer>
-        <p>&copy; 2024 Reparos Já - Atendimento Rápido</p>
+        <div class="container">
+            <p>&copy; 2024 InfoHouse Brasil - Soluções Residenciais</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
