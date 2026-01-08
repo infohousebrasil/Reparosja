@@ -2,103 +2,116 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfoHouse | Manutenção Residencial Profissional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>InfoHouse Itaboraí | Reparos em Condomínios e Residências</title>
+    
+    <meta name="description" content="Manutenção especializada para condomínios em Itaboraí. Eletricistas e encanadores com identificação para sua segurança. Atendemos Centro, Manilha e Venda das Pedras.">
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
+    <nav class="app-header">
         <div class="container">
+            <div class="location-tag"><span class="dot"></span> Especialista em Condomínios</div>
             <div class="logo">INFO<span>HOUSE</span></div>
-            <a href="https://wa.me/5521995901577" class="btn-whatsapp">WhatsApp</a>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <span class="badge">Selo de Qualidade ⭐⭐⭐⭐⭐</span>
-            <h1>Sua casa em ordem, <br>sem dor de cabeça.</h1>
-            <p>Eletricistas, encanadores e pintores verificados para resolver seu problema hoje.</p>
-            <a href="#orcamento" class="btn-cta">Solicitar Orçamento Agora</a>
-        </div>
-    </header>
-
-    <section class="results">
-        <div class="container">
-            <h2>Resultados Reais</h2>
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1581578731548-c64695ce6958?auto=format&fit=crop&w=500&q=80" alt="Antes e Depois">
-                    </div>
-                    <div class="card-info">
-                        <h3>Reforma de Banheiro</h3>
-                        <p>Troca de revestimento e hidráulica completa.</p>
-                    </div>
-                </div>
-                <div class="result-card">
-                    <div class="img-box">
-                        <img src="https://images.unsplash.com/photo-1621905252507-b354bcadcabc?auto=format&fit=crop&w=500&q=80" alt="Eletricista">
-                    </div>
-                    <div class="card-info">
-                        <h3>Manutenção Elétrica</h3>
-                        <p>Troca de fiação e instalação de iluminação LED.</p>
-                    </div>
-                </div>
+    <main class="app-content">
+        <section class="hero-card container">
+            <div class="content condominios">
+                <span class="trust-pill">Segurança e Identificação</span>
+                <h1>Reparos sem stress no seu <span>Condomínio</span></h1>
+                <p>Equipe treinada, limpa e autorizada para trabalhar no seu apartamento ou casa em Itaboraí.</p>
+                <a href="#orcamento" class="btn-main-app">Solicitar Agora</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="orcamento" class="booking-section">
-        <div class="container">
-            <div class="booking-card">
-                <div class="progress-bar"><div id="progress"></div></div>
-                
+        <section class="benefits container">
+            <div class="benefit-row">
+                <div class="benefit-item">✅ <strong>Identificação:</strong> Profissionais com nome na portaria.</div>
+                <div class="benefit-item">🧹 <strong>Obra Limpa:</strong> Cuidamos do seu piso e móveis.</div>
+                <div class="benefit-item">🕒 <strong>Pontualidade:</strong> Respeitamos as normas de horário.</div>
+            </div>
+        </section>
+
+        <section class="services-grid container">
+            <div class="service-mini-card">
+                <div class="icon">🚿</div>
+                <span>Chuveiro</span>
+            </div>
+            <div class="service-mini-card">
+                <div class="icon">🔌</div>
+                <span>Tomadas</span>
+            </div>
+            <div class="service-mini-card">
+                <div class="icon">🛠️</div>
+                <span>Varais</span>
+            </div>
+            <div class="service-mini-card">
+                <div class="icon">🚰</div>
+                <span>Sifão/Pia</span>
+            </div>
+        </section>
+
+        <section id="orcamento" class="container">
+            <div class="app-form-card">
+                <div class="form-header">
+                    <h2>Pedir Orçamento</h2>
+                    <div class="step-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
                 <form id="multiStepForm" action="https://formspree.io/f/e8ad8916abe54539b9107d13b3958a55" method="POST" enctype="multipart/form-data">
-                    
                     <div class="step active" data-step="1">
-                        <h2>Qual o seu nome?</h2>
-                        <input type="text" name="name" placeholder="Digite seu nome" required>
+                        <label>Como se chama?</label>
+                        <input type="text" name="name" placeholder="Nome Completo" required>
                         <button type="button" class="btn-next">Próximo</button>
                     </div>
 
                     <div class="step" data-step="2">
-                        <h2>O que precisa ser feito?</h2>
-                        <select name="servico" required>
-                            <option value="">Selecione...</option>
-                            <option value="eletrica">Elétrica</option>
-                            <option value="hidraulica">Hidráulica</option>
-                            <option value="pintura">Pintura</option>
-                            <option value="outros">Outros Reparos</option>
-                        </select>
-                        <div class="btn-group">
+                        <label>Qual o seu Condomínio/Bairro?</label>
+                        <input type="text" name="condominio" placeholder="Ex: Cond. Bosque de Itaboraí" required>
+                        <label>O que precisa?</label>
+                        <textarea name="message" placeholder="Ex: Instalar 3 lustres e trocar resistência." required></textarea>
+                        <div class="btn-row">
                             <button type="button" class="btn-prev">Voltar</button>
                             <button type="button" class="btn-next">Próximo</button>
                         </div>
                     </div>
 
                     <div class="step" data-step="3">
-                        <h2>Mande fotos do local</h2>
-                        <p>Isso agiliza o seu orçamento!</p>
-                        <input type="file" name="attachment" accept="image/*" multiple required>
-                        <div class="btn-group">
+                        <label>Mande fotos (Agiliza o preço)</label>
+                        <div class="upload-area">
+                            <input type="file" name="attachment" id="file-upload" accept="image/*" required>
+                            <label for="file-upload" class="file-label">📸 Tirar Foto agora</label>
+                        </div>
+                        <div class="btn-row">
                             <button type="button" class="btn-prev">Voltar</button>
-                            <button type="submit" id="submitBtn">Finalizar no WhatsApp</button>
+                            <button type="submit" id="submitBtn">Finalizar Orçamento</button>
                         </div>
                     </div>
-
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 InfoHouse Brasil. Profissionais de Confiança.</p>
-        </div>
-    </footer>
+        <section class="faq container">
+            <h3>Dúvidas frequentes</h3>
+            <details>
+                <summary>Vocês atendem finais de semana?</summary>
+                <p>Sim! Atendemos sábados e feriados, respeitando os horários de barulho do seu condomínio.</p>
+            </details>
+            <details>
+                <summary>Preciso avisar a portaria?</summary>
+                <p>Sim. Após o orçamento, fornecemos os dados do profissional para você autorizar a entrada.</p>
+            </details>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
