@@ -3,77 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>InfoHouse | Reparos Profissionais</title>
+    <title>InfoHouse | Reparos Residenciais Profissionais</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <header>
         <nav class="container">
             <div class="logo">INFO<span>HOUSE</span></div>
-            <a href="https://wa.me/5521995901577" class="btn-zap-topo">WhatsApp</a>
+            <a href="https://wa.me/5521995901577" target="_blank" class="btn-primary">Fale Conosco</a>
         </nav>
     </header>
 
-    <section class="hero container">
-        <span class="badge">⭐ 5.0 no Google</span>
-        <h1>Sua casa em boas mãos.</h1>
-        <p>Reparos rápidos com quem entende. Orçamento pelo WhatsApp em minutos.</p>
-    </section>
-
-    <section class="portfolio container">
-        <div class="section-header">
-            <h2>Resultados Reais</h2>
-            <p>Veja transformações feitas pela nossa equipe.</p>
-        </div>
-        <div class="antes-depois-scroll">
-            <div class="job-card">
-                <div class="job-img">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" alt="Antes">
-                    <span class="label-img">Antes e Depois</span>
-                </div>
-                <h3>Pintura e Acabamento</h3>
-            </div>
-            <div class="job-card">
-                <div class="job-img">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd6b?auto=format&fit=crop&w=400&q=80" alt="Depois">
-                    <span class="label-img">Manutenção</span>
-                </div>
-                <h3>Reparos Hidráulicos</h3>
+    <section class="hero-section">
+        <div class="container">
+            <span class="badge">🏠 Conectando você aos melhores profissionais</span>
+            <h1>Sua casa sempre em ordem, sem complicação.</h1>
+            <p>Pequenos reparos, manutenções e instalações. Qualidade garantida e orçamento transparente via WhatsApp.</p>
+            <a href="#solicitar" class="btn-large">Solicitar Orçamento Grátis</a>
+            <div class="rating-badge">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <span>Avaliação <strong>5.0</strong> por +100 clientes!</span>
             </div>
         </div>
     </section>
 
-    <section class="reviews container">
-        <div class="review-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Atendimento impecável! Resolveram o vazamento no mesmo dia."</p>
-            <span class="author"><strong>Ricardo M.</strong> • Cliente Verificado</span>
+    <section class="features-section">
+        <div class="container">
+            <h2>Como podemos te ajudar?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Elétrica</h3>
+                    <p>Instalação e reparo de tomadas, chuveiros, disjuntores.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-faucet"></i>
+                    <h3>Hidráulica</h3>
+                    <p>Vazamentos, torneiras, caixas d'água, encanamento geral.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-paint-roller"></i>
+                    <h3>Pintura e Acabamento</h3>
+                    <p>Pintura, massa corrida, pequenos reparos em paredes e muros.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Serviços Gerais</h3>
+                    <p>Troca de fechaduras, instalação de prateleiras, montagens.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="solicitar" class="typeform-section">
+    <section class="portfolio-section">
+        <div class="container">
+            <h2>Transformações que inspiram</h2>
+            <p class="section-subtitle">Veja a qualidade do nosso trabalho em cada detalhe.</p>
+            <div class="before-after-grid">
+                <div class="before-after-card">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1596205669179-c70a969f1d07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Antes da pintura" class="before-img">
+                        <img src="https://images.unsplash.com/photo-1596205669179-c70a969f1d07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Depois da pintura" class="after-img">
+                        <div class="slider-control"></div>
+                    </div>
+                    <h3>Pintura de Fachada</h3>
+                    <p>Restauração completa de fachada antiga para um aspecto moderno.</p>
+                </div>
+                <div class="before-after-card">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1616790937862-211c4708764b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Antes do reparo hidráulico" class="before-img">
+                        <img src="https://images.unsplash.com/photo-1616790937862-211c4708764b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Depois do reparo hidráulico" class="after-img">
+                        <div class="slider-control"></div>
+                    </div>
+                    <h3>Reparo de Vazamento</h3>
+                    <p>Solução definitiva para vazamentos, evitando danos maiores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <p class="section-subtitle">Sua confiança é o nosso maior orgulho.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Equipe rápida e eficiente! Resolveram um problema elétrico que ninguém conseguia."</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/50?img=12" alt="Foto cliente">
+                        <span><strong>Ana Clara G.</strong><br>Zona Sul, Rio de Janeiro</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Minha pintura ficou perfeita, e o prazo foi cumprido. Recomendo muito!"</p>
+                    <div class="client-info">
+                        <img src="https://i.pravatar.cc/50?img=32" alt="Foto cliente">
+                        <span><strong>Fernando S.</strong><br>Barra da Tijuca, Rio de Janeiro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solicitar" class="cta-form-section">
         <div class="container">
             <div class="typeform-box">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
                 <form id="multiStepForm" action="https://formspree.io/f/e8ad8916abe54539b9107d13b3958a55" method="POST" enctype="multipart/form-data">
                     
                     <div class="step active" id="step1">
                         <span class="step-counter">1/4</span>
-                        <h2>Qual o seu nome?</h2>
-                        <input type="text" name="name" id="input_name" placeholder="Escreva aqui..." required>
+                        <h2>Qual é o seu nome completo?</h2>
+                        <input type="text" name="name" placeholder="Digite seu nome aqui" required>
                         <button type="button" class="btn-next">Próximo</button>
                     </div>
 
                     <div class="step" id="step2">
                         <span class="step-counter">2/4</span>
-                        <h2>Qual serviço precisa?</h2>
-                        <select name="servico" id="input_servico" required>
-                            <option value="">Escolha uma opção...</option>
+                        <h2>Qual tipo de serviço você precisa?</h2>
+                        <select name="servico" required>
+                            <option value="">Selecione uma opção</option>
                             <option value="Eletrica">Elétrica</option>
                             <option value="Hidraulica">Hidráulica</option>
-                            <option value="Pintura">Pintura / Massa</option>
-                            <option value="Telhado">Telhado / Calhas</option>
+                            <option value="Pintura">Pintura e Acabamento</option>
+                            <option value="Telhado">Telhado e Calhas</option>
+                            <option value="Servicos Gerais">Serviços Gerais</option>
                         </select>
                         <div class="nav-group">
                             <button type="button" class="btn-prev">Voltar</button>
@@ -83,8 +148,8 @@
 
                     <div class="step" id="step3">
                         <span class="step-counter">3/4</span>
-                        <h2>Conte o que aconteceu:</h2>
-                        <textarea name="message" id="input_desc" placeholder="Ex: Minha pia está vazando..." required></textarea>
+                        <h2>Descreva o problema em detalhes:</h2>
+                        <textarea name="message" placeholder="Ex: A torneira da cozinha está pingando muito, preciso de um eletricista para instalar um novo chuveiro..." required></textarea>
                         <div class="nav-group">
                             <button type="button" class="btn-prev">Voltar</button>
                             <button type="button" class="btn-next">Próximo</button>
@@ -93,11 +158,12 @@
 
                     <div class="step" id="step4">
                         <span class="step-counter">4/4</span>
-                        <h2>Mande uma foto do local:</h2>
-                        <input type="file" name="attachment" accept="image/*" required>
+                        <h2>Envie fotos ou vídeos do local (opcional, mas ajuda muito!):</h2>
+                        <input type="file" name="attachment" accept="image/*,video/*" multiple>
+                        <p class="small-text">Você também pode enviar fotos direto pelo WhatsApp.</p>
                         <div class="nav-group">
                             <button type="button" class="btn-prev">Voltar</button>
-                            <button type="submit" id="submitBtn">Finalizar no Zap</button>
+                            <button type="submit" id="submitBtn">Finalizar e Chamar no WhatsApp</button>
                         </div>
                     </div>
 
@@ -105,6 +171,12 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 InfoHouse. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
