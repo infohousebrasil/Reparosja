@@ -2,8 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfoHouse | Reparos Residenciais Profissionais</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>InfoHouse | Reparos Profissionais</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -12,37 +12,44 @@
     <header>
         <nav class="container">
             <div class="logo">INFO<span>HOUSE</span></div>
-            <a href="#solicitar" class="btn-sm">Falar com Atendente</a>
+            <a href="https://wa.me/5521995901577" class="btn-zap-topo">WhatsApp</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <span class="badge">Disponível agora em sua região</span>
-            <h1>Manutenção residencial sem complicações.</h1>
-            <p>Conectamos você aos melhores profissionais para pequenos reparos, elétrica, hidráulica e pintura.</p>
-            <div class="stats">
-                <div><strong>+500</strong> Reparos feitos</div>
-                <div><strong>4.9/5</strong> Avaliação média</div>
+    <section class="hero container">
+        <span class="badge">⭐ 5.0 no Google</span>
+        <h1>Sua casa em boas mãos.</h1>
+        <p>Reparos rápidos com quem entende. Orçamento pelo WhatsApp em minutos.</p>
+    </section>
+
+    <section class="portfolio container">
+        <div class="section-header">
+            <h2>Resultados Reais</h2>
+            <p>Veja transformações feitas pela nossa equipe.</p>
+        </div>
+        <div class="antes-depois-scroll">
+            <div class="job-card">
+                <div class="job-img">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" alt="Antes">
+                    <span class="label-img">Antes e Depois</span>
+                </div>
+                <h3>Pintura e Acabamento</h3>
+            </div>
+            <div class="job-card">
+                <div class="job-img">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd6b?auto=format&fit=crop&w=400&q=80" alt="Depois">
+                    <span class="label-img">Manutenção</span>
+                </div>
+                <h3>Reparos Hidráulicos</h3>
             </div>
         </div>
     </section>
 
-    <section class="steps-info container">
-        <div class="step-card">
-            <span>01</span>
-            <h3>Peça o orçamento</h3>
-            <p>Descreva o problema e envie fotos pelo nosso formulário inteligente.</p>
-        </div>
-        <div class="step-card">
-            <span>02</span>
-            <h3>Receba a proposta</h3>
-            <p>Analisamos as fotos e enviamos o valor via WhatsApp em minutos.</p>
-        </div>
-        <div class="step-card">
-            <span>03</span>
-            <h3>Serviço feito</h3>
-            <p>Profissional vai até sua casa e resolve o problema com garantia.</p>
+    <section class="reviews container">
+        <div class="review-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Atendimento impecável! Resolveram o vazamento no mesmo dia."</p>
+            <span class="author"><strong>Ricardo M.</strong> • Cliente Verificado</span>
         </div>
     </section>
 
@@ -51,48 +58,46 @@
             <div class="typeform-box">
                 <form id="multiStepForm" action="https://formspree.io/f/e8ad8916abe54539b9107d13b3958a55" method="POST" enctype="multipart/form-data">
                     
-                    <div class="step active" data-step="1">
-                        <span class="step-number">1 de 4</span>
-                        <h2>Olá! Qual é o seu nome?</h2>
-                        <input type="text" name="name" placeholder="Digite seu nome completo" required>
-                        <button type="button" class="next-btn">Próximo</button>
+                    <div class="step active" id="step1">
+                        <span class="step-counter">1/4</span>
+                        <h2>Qual o seu nome?</h2>
+                        <input type="text" name="name" id="input_name" placeholder="Escreva aqui..." required>
+                        <button type="button" class="btn-next">Próximo</button>
                     </div>
 
-                    <div class="step" data-step="2">
-                        <span class="step-number">2 de 4</span>
-                        <h2>Como falamos com você e o que precisa?</h2>
-                        <input type="tel" name="whatsapp" id="whatsapp" placeholder="Seu WhatsApp com DDD" required>
-                        <select name="servico" required>
-                            <option value="">Selecione o tipo de reparo...</option>
+                    <div class="step" id="step2">
+                        <span class="step-counter">2/4</span>
+                        <h2>Qual serviço precisa?</h2>
+                        <select name="servico" id="input_servico" required>
+                            <option value="">Escolha uma opção...</option>
                             <option value="Eletrica">Elétrica</option>
                             <option value="Hidraulica">Hidráulica</option>
-                            <option value="Pintura">Pintura/Massa</option>
-                            <option value="Outros">Outros Reparos</option>
+                            <option value="Pintura">Pintura / Massa</option>
+                            <option value="Telhado">Telhado / Calhas</option>
                         </select>
-                        <div class="nav-btns">
-                            <button type="button" class="prev-btn">Voltar</button>
-                            <button type="button" class="next-btn">Próximo</button>
+                        <div class="nav-group">
+                            <button type="button" class="btn-prev">Voltar</button>
+                            <button type="button" class="btn-next">Próximo</button>
                         </div>
                     </div>
 
-                    <div class="step" data-step="3">
-                        <span class="step-number">3 de 4</span>
-                        <h2>Descreva brevemente o problema</h2>
-                        <textarea name="message" placeholder="Ex: Minha torneira está pingando muito..." required></textarea>
-                        <div class="nav-btns">
-                            <button type="button" class="prev-btn">Voltar</button>
-                            <button type="button" class="next-btn">Próximo</button>
+                    <div class="step" id="step3">
+                        <span class="step-counter">3/4</span>
+                        <h2>Conte o que aconteceu:</h2>
+                        <textarea name="message" id="input_desc" placeholder="Ex: Minha pia está vazando..." required></textarea>
+                        <div class="nav-group">
+                            <button type="button" class="btn-prev">Voltar</button>
+                            <button type="button" class="btn-next">Próximo</button>
                         </div>
                     </div>
 
-                    <div class="step" data-step="4">
-                        <span class="step-number">4 de 4</span>
-                        <h2>Para finalizar, envie fotos do local</h2>
-                        <p class="hint">Isso ajuda muito na precisão do orçamento.</p>
-                        <input type="file" name="attachment" accept="image/*" multiple required>
-                        <div class="nav-btns">
-                            <button type="button" class="prev-btn">Voltar</button>
-                            <button type="submit" id="submitBtn">Finalizar e abrir WhatsApp</button>
+                    <div class="step" id="step4">
+                        <span class="step-counter">4/4</span>
+                        <h2>Mande uma foto do local:</h2>
+                        <input type="file" name="attachment" accept="image/*" required>
+                        <div class="nav-group">
+                            <button type="button" class="btn-prev">Voltar</button>
+                            <button type="submit" id="submitBtn">Finalizar no Zap</button>
                         </div>
                     </div>
 
@@ -100,12 +105,6 @@
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 InfoHouse Brasil - Soluções Residenciais</p>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
