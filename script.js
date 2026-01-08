@@ -19,23 +19,22 @@ form.addEventListener('submit', function(e) {
     const formData = new FormData(form);
 
     // 1. Enviar para o E-mail via Web3Forms
-    fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-    })
-    .then(res => {
-        if (res.status === 200) {
-            // 2. Redirecionar para WhatsApp
-            const texto = `Olá! Me chamo ${nome}. Solicitei um orçamento no site para ${servico.toUpperCase()}.\n\nDescrição: ${descricao}\n\nJá enviei as fotos pelo formulário!`;
-            const linkZap = `https://wa.me/${SEU_ZAP}?text=${encodeURIComponent(texto)}`;
-            
-            window.location.href = linkZap;
-        } else {
-            alert("Erro ao enviar. Verifique se a chave do Web3Forms está correta.");
-            btn.disabled = false;
-            btn.innerText = "Tentar novamente";
-        }
-    })
+    // Substitua o bloco do fetch por este para testar:
+fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    body: formData
+})
+.then(async res => {
+    const json = await res.json(); // Isso nos mostra a resposta do servidor
+    if (res.status === 200) {
+        window.location.href = linkZap;
+    } else {
+        console.log("Erro detalhado:", json);
+        alert("Erro do servidor: " + json.message); // Vai te dizer exatamente o que está errado
+        btn.disabled = false;
+        btn.innerText = "Tentar novamente";
+    }
+})
     .catch(err => {
         alert("Erro de rede. Tente novamente.");
         btn.disabled = false;
