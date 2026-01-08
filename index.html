@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>InfoHouse Itaboraí | Reparos em Condomínios</title>
+    <title>InfoHouse Itaboraí | Reparos e Manutenção em Condomínios</title>
+    
+    <meta name="description" content="Manutenção residencial em Itaboraí. Especialista em condomínios no Centro, Manilha e Venda das Pedras. Eletricista, encanador e reparos rápidos.">
+    <meta name="keywords" content="eletricista itaborai, encanador itaborai, reparos residenciais itaborai, marido de aluguel itaborai, manutenção condominio itaborai">
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -19,27 +23,43 @@
     <main class="app-content">
         <section class="hero-card container">
             <div class="content condominios">
-                <span class="trust-pill">Segurança Garantida</span>
-                <h1>Seu <span>Condomínio</span> em boas mãos.</h1>
-                <p>Eletricista, Encanador e Reparos Rápidos com identificação para portaria.</p>
-                <a href="#orcamento" class="btn-main-app">Pedir Orçamento Agora</a>
+                <span class="trust-pill">Segurança e Identificação</span>
+                <h1>O Reparo do seu <span>Condomínio</span> está aqui.</h1>
+                <p>Eletricista, Encanador e Reparos Rápidos com identificação para portaria e obra limpa.</p>
+                <a href="#orcamento" class="btn-main-app">Solicitar Orçamento Agora</a>
             </div>
         </section>
 
         <section class="benefits-row container">
-            <div class="benefit">✅ Identificação</div>
+            <div class="benefit">🛡️ Identificado</div>
             <div class="benefit">🧹 Obra Limpa</div>
             <div class="benefit">🕒 Pontual</div>
+        </section>
+
+        <section class="services-overview container">
+            <div class="app-card-services">
+                <div class="card-header">
+                    <h3>O que fazemos por você</h3>
+                    <span class="badge-count">Soluções Completas</span>
+                </div>
+                <div class="mini-tags">
+                    <span>💧 Hidráulica</span>
+                    <span>⚡ Elétrica</span>
+                    <span>🏠 Acabamento</span>
+                    <span>🪟 Marcenaria</span>
+                </div>
+                <button class="btn-outline" onclick="openServices()">Ver Lista Detalhada de Serviços</button>
+            </div>
         </section>
 
         <section id="orcamento" class="container">
             <div class="app-form-card">
                 <div class="form-header">
                     <h2>Novo Pedido</h2>
+                    <div class="step-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
                 </div>
 
                 <form id="multiStepForm" action="https://formspree.io/f/e8ad8916abe54539b9107d13b3958a55" method="POST">
-                    
                     <div class="step active" id="step1">
                         <label>Qual seu nome?</label>
                         <input type="text" name="name" placeholder="Nome completo" required>
@@ -47,51 +67,80 @@
                     </div>
 
                     <div class="step" id="step2">
-                        <label>Condomínio ou Bairro?</label>
-                        <input type="text" name="bairro" placeholder="Ex: Cond. Bosque de Itaboraí" required>
-                        <label>O que você precisa?</label>
-                        <textarea name="message" placeholder="Ex: Trocar resistência do chuveiro..." required></textarea>
+                        <label>Qual seu Condomínio/Bairro?</label>
+                        <input type="text" name="bairro" placeholder="Ex: Cond. Bosque, Venda das Pedras..." required>
+                        <label>O que precisa ser feito?</label>
+                        <textarea name="message" placeholder="Ex: Trocar chuveiro e vedar pia..." required></textarea>
                         <div class="btn-row">
                             <button type="button" class="btn-prev" onclick="nextStep(1)">Voltar</button>
-                            <button type="submit" id="submitBtn">Finalizar no Zap</button>
+                            <button type="submit" id="submitBtn">Finalizar no WhatsApp</button>
                         </div>
                     </div>
-
                 </form>
-<section class="social-proof container">
-    <div class="proof-header">
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <h3>O que dizem os vizinhos</h3>
-        <p>Mais de 100 atendimentos realizados em condomínios de Itaboraí este mês.</p>
-    </div>
-
-    <div class="testimonials-scroll">
-        <div class="testimonial-card">
-            <p>"Excelente para quem mora em apartamento. O técnico foi super limpo e a portaria liberou rápido porque ele estava identificado."</p>
-            <div class="client-meta">
-                <strong>Marcos R.</strong>
-                <span>Condomínio Bosque de Itaboraí</span>
             </div>
-        </div>
+        </section>
 
-        <div class="testimonial-card">
-            <p>"Preço justo e pontualidade. Resolveram o vazamento da pia em 20 minutos. Recomendo muito o pessoal da InfoHouse!"</p>
-            <div class="client-meta">
-                <strong>Clara S.</strong>
-                <span>Venda das Pedras</span>
+        <section class="social-proof container">
+            <div class="proof-header">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <h3>Vizinhos que confiam</h3>
             </div>
-        </div>
-    </div>
-
-    <div class="trust-badges">
-        <div class="badge-item">🛡️ Profissionais Verificados</div>
-        <div class="badge-item">🧼 Serviço com Limpeza</div>
-    </div>
-</section>
-
+            <div class="testimonials-scroll">
+                <div class="testimonial-card">
+                    <p>"Técnico muito educado e identificado. Entrou no condomínio sem problemas e resolveu tudo rápido."</p>
+                    <strong>Marcos R. (Centro)</strong>
+                </div>
+                <div class="testimonial-card">
+                    <p>"A limpeza pós-serviço foi impecável. Recomendo para quem mora em apartamento."</p>
+                    <strong>Clara S. (Manilha)</strong>
+                </div>
             </div>
         </section>
     </main>
+
+    <div id="servicesModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nossos Serviços</h2>
+                <button class="close-btn" onclick="closeServices()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="service-cat">
+                    <h4>💧 Hidráulica</h4>
+                    <ul>
+                        <li>Troca de carrapeta (pinga-pinga)</li>
+                        <li>Desentupimento leve (ralos e pias)</li>
+                        <li>Vedação de vasos e rejuntes</li>
+                        <li>Reparo em caixa acoplada (boia/corrente)</li>
+                        <li>Limpeza de sifão e arejadores</li>
+                    </ul>
+                </div>
+                <div class="service-cat">
+                    <h4>⚡ Elétrica</h4>
+                    <ul>
+                        <li>Troca de resistência de chuveiro</li>
+                        <li>Substituição de tomadas e interruptores</li>
+                        <li>Instalação de luminárias e ventiladores</li>
+                        <li>Troca de lâmpadas para LED</li>
+                        <li>Reaperto de quadro de energia</li>
+                    </ul>
+                </div>
+                <div class="service-cat">
+                    <h4>🏠 Acabamento e Diversos</h4>
+                    <ul>
+                        <li>Tapa-furos e retoques de pintura</li>
+                        <li>Troca de rejunte e colagem de azulejos</li>
+                        <li>Ajuste de portas, dobradiças e gavetas</li>
+                        <li>Instalação de suporte de TV e prateleiras</li>
+                        <li>Limpeza de calhas e vedação com silicone</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-main-app" onclick="closeServices()">Fechar e Solicitar</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
