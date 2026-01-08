@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparos Pro | Soluções Residenciais Rápidas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">REPAROS<span>PRO</span></div>
+            <a href="#orcamento" class="btn-nav">Solicitar Agora</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Sua casa nova, sem dor de cabeça.</h1>
+            <p>Pequenos reparos, pintura e manutenção com profissionais verificados e orçamento rápido.</p>
+            <a href="#orcamento" class="btn-main">Quero um orçamento gratuito</a>
+        </div>
+    </section>
+
+    <section class="antes-depois container">
+        <h2>Resultados Reais</h2>
+        <div class="grid-comparativo">
+            <div class="card-job">
+                <div class="fotos">
+                    <div class="tag antes">Antes</div>
+                    <img src="https://via.placeholder.com/300x200/ddd/555?text=Parede+com+Infiltração" alt="Antes">
+                    <div class="tag depois">Depois</div>
+                    <img src="https://via.placeholder.com/300x200/25d366/fff?text=Pintura+Finalizada" alt="Depois">
+                </div>
+                <p>Recuperação de parede e pintura interna</p>
+            </div>
+            <div class="card-job">
+                <div class="fotos">
+                    <div class="tag antes">Antes</div>
+                    <img src="https://via.placeholder.com/300x200/ddd/555?text=Telhado+Quebrado" alt="Antes">
+                    <div class="tag depois">Depois</div>
+                    <img src="https://via.placeholder.com/300x200/25d366/fff?text=Telhas+Novas" alt="Depois">
+                </div>
+                <p>Troca de telhas e limpeza de calhas</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="orcamento" class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>Peça seu Reparo</h2>
+                <p>Conte o problema, envie fotos e receba o orçamento no seu WhatsApp.</p>
+                
+                <form id="repairForm">
+                    <input type="hidden" name="access_key" value="16828e56-ee6a-466e-a259-291b1fc00f5a">
+                    <input type="hidden" name="subject" value="Novo Lead de Reparo">
+
+                    <div class="input-group">
+                        <input type="text" name="name" placeholder="Seu Nome" required>
+                        <input type="tel" name="whatsapp" id="whatsapp" placeholder="WhatsApp com DDD" required>
+                    </div>
+
+                    <select name="servico" required>
+                        <option value="">O que precisa ser feito?</option>
+                        <option value="Pintura">Pintura e Massa</option>
+                        <option value="Hidraulica">Hidráulica (Vazamentos/Pias)</option>
+                        <option value="Eletrica">Elétrica (Chuveiro/Tomadas)</option>
+                        <option value="Telhado">Telhado e Calhas</option>
+                        <option value="Outros">Outros pequenos reparos</option>
+                    </select>
+
+                    <textarea name="descricao" placeholder="Descreva o problema detalhadamente..." required></textarea>
+
+                    <div class="file-input">
+                        <label for="attachment">Anexe fotos do local (Obrigatório)</label>
+                        <input type="file" name="attachment" accept="image/*" multiple required>
+                    </div>
+
+                    <button type="submit" id="submitBtn">Enviar e Abrir WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="depoimentos container">
+        <h2>O que dizem nossos clientes</h2>
+        <div class="grid-depoimentos">
+            <div class="depoimento">
+                <p>"Trocaram minha fechadura e pintaram a porta em uma tarde. Muito limpos e educados!"</p>
+                <span>- Maria Souza, Bairro Centro</span>
+            </div>
+            <div class="depoimento">
+                <p>"O melhor preço que achei para limpar as calhas antes da chuva. Recomendo."</p>
+                <span>- Carlos Lima, Bairro Jardim</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Reparos Já - Atendimento Rápido</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
